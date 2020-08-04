@@ -1,0 +1,95 @@
+# 블로그의 Base URL
+baseurl: ""
+url: ""
+
+meta:
+  title: 소 잃고 외양간 고치는 젊은이들의 개발 블로그 # 브라우저 타이틀
+  avatar: assets/img/logo.png # 블로그 내부에서 사용하는 아바타 이미지
+  favicon: assets/favicon.ico # 파비콘 이미지
+  description: "대학교 때 조금만 더 공부를 많이 했으면 어땠을까?" # meta descrip[tion
+
+theme_settings:
+  # Header and footer text
+  # 추가
+  # 완벽한 서비스를 만들기 위해 모든 버그들을 사랑해야지
+  # 그리고 나에게 주어진 이슈들을 처리해야겠다.
+  header_text:
+     <p>대학교 때 조금만 더 공부를 많이 했으면 어땠을까?<br>너와나 지금까지 행복했을까 - by. 윤승원</p>
+  header_text_feature_image: #이미지가있다면 여기에다 넣겠죠?
+  footer_text: >
+      <address>
+        <em>Copyright ©</em>
+        <a href="https://github.com/foolish-young-man/foolish-young-man.github.io" target="_blank" >안암오형제</a>
+        <span>All Rights Reserved.</span>
+      </address> Powered by GitHub Pages.
+
+  # Icons
+  rss: false
+  email_address: # Full email address, e.g. "sam@example.com"
+  behance:
+  bitbucket:
+  dribbble:
+  facebook:
+  flickr:
+  gitlab:
+  github: "foolish-young-man/foolish-young-man.github.io"
+  gitter:
+  google_plus:
+  instagram:
+  linkedin:  # Full URL
+  pinterest:
+  reddit:
+  soundcloud:
+  stack_exchange:  # Full URL
+  steam:
+  tumblr:
+  twitter:
+  wordpress:
+  youtube:
+
+  # Scripts
+  google_analytics: # Tracking ID, e.g. "UA-000000-01"
+  disqus_shortname:
+  katex: true # Enable if using math markup
+  search: false # Enable the search feature
+
+  # Localization strings
+  str_follow_on: "Follow on"
+  str_rss_follow: "Follow RSS feed"
+  str_email: "Email"
+  str_next_post: "Next post"
+  str_previous_post: "Previous post"
+  str_next_page: "Next"
+  str_previous_page: "Prev"
+  str_javascript_required_disqus: "Please enable JavaScript to view comments."
+  str_search_no_results: "No results found."
+
+  # Colours, typography and padding
+  # Open the "_sass > base" folder, and open "_variables.scss"
+  google_fonts: "Source+Sans+Pro:400,700,700italic,400italic"
+
+  # Post navigation
+  post_navigation: false
+
+# PAGINATION
+paginate: 10
+paginate_path: "/page:num"
+
+# BUILD SETTINGS
+markdown: kramdown
+highlighter: rouge
+sass:
+  sass_dir: _sass
+  style: :compressed
+plugins:
+  - jekyll-paginate
+  - jekyll-avatar
+exclude:
+  - Gemfile
+  - Gemfile.lock
+
+# 글의 링크 패턴
+permalink: /post/:title
+
+# 타임존
+tiemzone: Asis/Seoul

@@ -1,0 +1,67 @@
+---
+layout: default
+---
+
+<div class="home">
+  {% if site.theme_settings.header_text %}
+  <div class="call-out"
+       style="background-image: url('{{ site.baseurl }}/{{ site.theme_settings.header_text_feature_image }}')">
+    {{ site.theme_settings.header_text }}
+  </div>
+  {% endif %}
+
+  <div class="posts">
+    {% for post in paginator.posts %}
+    <div class="post-teaser">
+      <header>
+          <h1>
+            <a class="post-link" href="{{ post.url | relative_url }}">
+              {{ post.title }}
+            </a>
+          </h1>
+      </header>
+      <div class="excerpt">
+        {{ post.excerpt | strip_newlines | strip_html | truncatewords: 35, "..." }}
+        <!--        {{ post.excerpt }} 본문 요약문은 이걸 씁니다. -->
+      </div>
+      <div class="meta flex-post-author">
+        {%- if post.authors -%}
+        {% assign author_name = post.author %}
+        {%- else if post.author -%}
+        {% assign author = site.data.authors[post.author] %}
+        {% assign author_name = author.name %}
+        <div class="flex-post-author-item">
+          {%- if author.username -%}
+          <a href="//github.com/{{ author.username }}" target="_blank">
+            {% avatar user=author.username size=32 %}
+          </a>
+          {%- endif -%}
+        </div>
+        <div class="flex-post-author-item">
+          {{ author.name }}
+          <br>
+          {{ post.date | date: "%B %-d, %Y" }}
+        </div>
+        {%- endif -%}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  {% if paginator.total_pages > 1 %}
+  <div class="pagination">
+    {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | relative_url | replace: '//', '/' }}" class="button">
+      <i class="fa fa-chevron-left"></i>
+      {{ site.theme_settings.str_previous_page }}
+    </a>
+    {% endif %}
+    {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | relative_url | replace: '//', '/' }}" class="button">
+      {{ site.theme_settings.str_next_page }}
+      <i class="fa fa-chevron-right"></i>
+    </a>
+    {% endif %}
+  </div>
+  {% endif %}
+</div>

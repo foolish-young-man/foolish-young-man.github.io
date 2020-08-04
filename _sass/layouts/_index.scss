@@ -1,0 +1,71 @@
+// Header text feature
+.call-out {
+  @extend %padding-small-vertical-regular-width;
+  display: inline-block;
+  width: 100%;
+  background-color:$header-desc-background-color;
+  background-size: cover;
+  font-size: 1.7em;
+  text-align: left;
+  color: $header-desc-text-color;
+}
+.call-out p:last-child {
+  margin-bottom: 0;
+}
+.call-out p {
+  font-size: 1.5em;
+  font-family: Nanum Pen Script, sans-serif;
+  //  Nanum Gothic Coding, Gaegu, https://fonts.google.com/?subset=korean
+}
+.call-out a {
+  //font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  color: $header-desc-link-color;
+  border: 1px solid #FFFFFF;
+  border-radius: 2px;
+  font-size: 0.8em;
+  padding: 10px 15px;
+  letter-spacing: -0.5px;
+}
+// Post listing
+.posts {
+  .post-teaser {
+    @extend %padding-small-regular;
+    width: 100%;
+    margin-bottom: 0;
+    display: inline-block;
+    background-size: $feature-image-size;
+    border-bottom: 1px solid $border-color;
+    p a {
+      @extend .body-link;
+    }
+  }
+  .excerpt {
+    margin-top: 1em;
+    padding-top: 15px;
+    color: rgba($text-color, .5);
+    font-size: 0.9em;
+    letter-spacing: 0.1em;
+    margin: 0;
+  }
+}
+.flex-post-author{
+  display: flex;
+  margin-top: 25px;
+}
+.flex-post-author-item {
+  margin-right: 10px;
+}
+// Pagination
+.pagination .button {
+  margin: 0 1.5em;
+  i {
+    vertical-align: middle;
+  }
+}
+.pagination {
+  padding: $padding-small $padding-large 0 $padding-large;
+  text-align: center;
+  @media (max-width: 600px) {
+    padding: $padding-small;
+  }
+}
